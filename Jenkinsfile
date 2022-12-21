@@ -6,7 +6,7 @@ pipeline{
     stage("build"){
       steps{
        echo 'executing yarn'
-       nodejs('node-19.3.0'){
+       nodejs('nodejs-19.3.0'){
         sh 'yarn install'
        }
       }
