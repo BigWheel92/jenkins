@@ -5,7 +5,7 @@ pipeline{
 
     stage("build"){
         when {
-          changeRequest()
+          getGitChanges()==true
         }
       steps{
        echo 'executing yarn'
@@ -17,7 +17,7 @@ pipeline{
 
     stage("test"){
       when {
-          changeRequest()
+          getGitChanges()==true
         }
      steps{
       echo 'testing the application'
@@ -26,7 +26,7 @@ pipeline{
 
     stage("deploy"){
       when {
-          changeRequest()
+          getGitChanges()==true
         }
      steps{
       echo 'deploying the application'
