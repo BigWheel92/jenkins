@@ -6,7 +6,7 @@ pipeline{
     stage("build"){
       steps{
         echo 'executing yarn'
-        sh 'node --version'
+        sh 'whoami'
       }
     }
 
