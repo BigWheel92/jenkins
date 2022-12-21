@@ -6,7 +6,7 @@ pipeline{
     stage("build"){
         when {
           expression{
-          getGitChanges()==true
+          changeRequest()==true
           }
         }
       steps{
@@ -20,7 +20,7 @@ pipeline{
     stage("test"){
         when {
           expression{
-          getGitChanges()==true
+          changeRequest()==true
           }
         }
      steps{
@@ -31,7 +31,7 @@ pipeline{
     stage("deploy"){
         when {
           expression{
-          getGitChanges()==true
+          changeRequest()==true
           }
         }
      steps{
