@@ -6,7 +6,7 @@ pipeline{
     stage("build"){
       steps{
         echo 'executing yarn'
-        sh 'yarn'
+        sh 'node --version'
       }
     }
 
