@@ -2,11 +2,11 @@ pipeline{
 
   agent any
   parameters{
-    booleanParam{
+    booleanParam(
       defaultValue: false,
       description: 'Skip Tests?',
       name: 'skipTests'
-    }
+    )
   }
   stages{
 
