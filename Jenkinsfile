@@ -3,7 +3,7 @@ pipeline{
   agent any
   parameters{
     booleanParam{
-      defaultValue: 'false',
+      defaultValue: false,
       description: 'Skip Tests?',
       name: 'skipTests'
     }
