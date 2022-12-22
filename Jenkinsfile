@@ -1,6 +1,13 @@
 pipeline{
 
   agent any
+  parameters{
+    booleanParam{
+      defaultValue: 'false',
+      description: 'Skip Tests?',
+      name: 'skipTests'
+    }
+  }
   stages{
 
     stage("build"){
@@ -20,7 +27,7 @@ pipeline{
     stage("test"){
         when {
           expression{
-          changeRequest()==true
+          changeRequest()==true && params.skipTests==false
           }
         }
      steps{
