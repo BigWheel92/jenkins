@@ -11,11 +11,6 @@ pipeline{
   stages{
 
     stage("build"){
-        when {
-          expression{
-          changeRequest()==true
-          }
-        }
       steps{
        echo 'executing yarn'
        nodejs('nodejs-19.3.0'){
@@ -27,7 +22,7 @@ pipeline{
     stage("test"){
         when {
           expression{
-          changeRequest()==true && params.skipTests==false
+            params.skipTests==false
           }
         }
      steps{
@@ -36,11 +31,6 @@ pipeline{
     }
 
     stage("deploy"){
-        when {
-          expression{
-          changeRequest()==true
-          }
-        }
      steps{
       echo 'deploying the application'
       }
